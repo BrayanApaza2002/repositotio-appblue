@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}AppBlue{% endblock %}</title>
+    <style>
+        /* Estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            background-color: #f0f4f8;
+            color: #2d3748;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Cabecera */
+        header {
+            background: linear-gradient(135deg, #2b6cb0 0%, #2c5282 100%);
+            color: white;
+            padding: 1.5rem 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        /* Navegación */
+        nav {
+            font-size: 1rem;
+        }
+
+        nav a {
+            color: #e2e8f0;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        /* Contenido principal */
+        main {
+            flex: 1;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* Bloque de contenido con tarjeta */
+        .contenido {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Responsividad para móviles */
+        @media (max-width: 600px) {
+            header {
+                padding: 1rem;
+                text-align: center;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 0.3rem;
+                padding: 0.4rem 0.8rem;
+            }
+
+            main {
+                padding: 1rem;
+            }
+
+            .contenido {
+                padding: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🔵 AppBlue</h1>
+        <nav>
+            <a href="/">Inicio</a> | 
+            <a href="/panel">Admin</a> | 
+            <a href="/entrada/1">Blog</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="contenido">
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+</body>
+</html>

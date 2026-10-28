@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block title %}Panel de Administración — AppBlue{% endblock %}
+
+{% block content %}
+<div class="panel-admin">
+    <!-- Encabezado del panel -->
+    <div class="panel-header">
+        <h2> Bienvenido al Panel de Administración</h2>
+        <p class="subtitulo">Gestión y control de la plataforma AppBlue</p>
+    </div>
+</div>
+
+<style>
+    .panel-admin {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .panel-header {
+        text-align: center;
+        margin-bottom: 2.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 2px solid #e2e8f0;
+    }
+
+    .panel-header h2 {
+        color: #2b6cb0;
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .subtitulo {
+        color: #718096;
+        font-size: 1rem;
+    }
+
+    .tarjetas-menu {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .tarjeta {
+        background: linear-gradient(to bottom, #ffffff, #f7fafc);
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 1.8rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .tarjeta:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(43, 108, 176, 0.15);
+        border-color: #2b6cb0;
+    }
+
+    .tarjeta h3 {
+        color: #2d3748;
+        font-size: 1.2rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .tarjeta p {
+        color: #718096;
+        font-size: 0.95rem;
+        margin-bottom: 1.2rem;
+        line-height: 1.5;
+    }
+
+    .boton {
+        display: inline-block;
+        background-color: #2b6cb0;
+        color: white;
+        padding: 0.7rem 1.2rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background-color 0.3s ease;
+    }
+
+    .boton:hover {
+        background-color: #2c5282;
+    }
+
+    /* Responsividad */
+    @media (max-width: 600px) {
+        .tarjetas-menu {
+            grid-template-columns: 1fr;
+        }
+
+        .panel-header h2 {
+            font-size: 1.4rem;
+        }
+    }
+</style>
+{% endblock %}

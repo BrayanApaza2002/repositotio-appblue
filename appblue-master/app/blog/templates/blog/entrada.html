@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+
+{% block title %}{{ titulo }} — Blog AppBlue{% endblock %}
+
+{% block content %}
+<article class="entrada-blog">
+    <!-- Encabezado de la entrada -->
+    <header class="cabecera-entrada">
+        <h2> Detalle de la Entrada</h2>
+        <h1 class="titulo-entrada">{{ titulo }}</h1>
+    </header>
+
+    <!-- Contenido -->
+    <div class="cuerpo-entrada">
+        <p class="etiqueta">El título de la entrada es:</p>
+        <p class="valor-titulo"><strong>{{ titulo }}</strong></p>
+
+        <!-- Aquí puedes agregar después el contenido completo, fecha, autor, etc. -->
+        <div class="contenido-adicional">
+            <em>Próximamente: contenido completo, fecha de publicación y autor</em>
+        </div>
+    </div>
+
+    <!-- Navegación de regreso -->
+    <div class="navegacion-regreso">
+        <a href="/" class="enlace-regreso">← Volver al Inicio</a>
+        <a href="/entradas" class="enlace-regreso">← Ver todas las entradas</a>
+    </div>
+</article>
+
+<style>
+    .entrada-blog {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .cabecera-entrada {
+        text-align: center;
+        margin-bottom: 2rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 2px solid #e2e8f0;
+    }
+
+    .cabecera-entrada h2 {
+        color: #718096;
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+    }
+
+    .titulo-entrada {
+        color: #2b6cb0;
+        font-size: 2rem;
+        line-height: 1.3;
+    }
+
+    .cuerpo-entrada {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #2d3748;
+        margin-bottom: 2rem;
+    }
+
+    .etiqueta {
+        color: #718096;
+        margin-bottom: 0.5rem;
+    }
+
+    .valor-titulo {
+        font-size: 1.3rem;
+        color: #2b6cb0;
+        padding: 1rem;
+        background-color: #ebf4ff;
+        border-radius: 8px;
+        border-left: 4px solid #2b6cb0;
+    }
+
+    .contenido-adicional {
+        margin-top: 2rem;
+        padding: 1.2rem;
+        background-color: #f7fafc;
+        border-radius: 8px;
+        color: #718096;
+        text-align: center;
+    }
+
+    .navegacion-regreso {
+        display: flex;
+        gap: 1.5rem;
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid #e2e8f0;
+        flex-wrap: wrap;
+    }
+
+    .enlace-regreso {
+        color: #2b6cb0;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+    }
+
+    .enlace-regreso:hover {
+        color: #2c5282;
+        text-decoration: underline;
+    }
+
+    /* Responsividad */
+    @media (max-width: 600px) {
+        .titulo-entrada {
+            font-size: 1.5rem;
+        }
+
+        .valor-titulo {
+            font-size: 1.1rem;
+            padding: 0.8rem;
+        }
+
+        .navegacion-regreso {
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+    }
+</style>
+{% endblock %}
